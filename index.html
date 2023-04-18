@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="stylesheet" href="./style.css">
+    <title>Number Convertor - Coder Calculator</title>
+</head>
+
+<body>
+
+    <!-- header start  -->
+    <header class="bg-purple-800">
+
+        <!-- nav menu start  -->
+        <nav class="flex text-white items-center flex-wrap justify-between py-4 px-8 w-full max-w-[1080px] mx-auto">
+
+            <!-- logo heading -->
+            <h2 class="font-bold text-2xl align-middle">Coder Calculator</h2>
+
+            <!-- nav menu items  -->
+            <ul class="flex gap-8">
+                <li>
+                    <a class="opacity-80 hover:opacity-100" href="/">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a class="opacity-80 hover:opacity-100" href="/">
+                        About
+                    </a>
+                </li>
+                <li>
+                    <a class="opacity-80 hover:opacity-100" href="/">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+            <!-- nav menu items end  -->
+
+        </nav>
+        <!-- nav end -->
+    </header>
+
+
+    <!-- main area start  -->
+    <main class="w-full max-w-[1080px] mx-auto p-1">
+        <h1 class="text-2xl font-normal mx-auto my-4 text-center">
+            <!-- 
+                value of ids 'inBase' and 'outBase' will be manipulate with the help of js on base of user selection 
+                By Default it is Binary to Decimal
+            -->
+            <span id="headingFrom" class="mx-1"> Binary </span> to <span id="headingTo" class="mx-1"> Decimal </span>
+            convertor
+        </h1>
+
+        <!-- start user input section  -->
+        <section class="bg-purple-400 p-4 rounded flex justify-between min-w-[280px] max-w-[450px] mx-auto flex-col">
+
+            <form>
+                <!-- User input selection  -->
+                <div class="flex gap-4">
+
+                    <!-- inBase selection / from  -->
+                    <div class="flex flex-col w-1/2">
+                        <label for="inBase">From</label>
+
+                        <!-- option  -->
+                        <select name="inBase" id="inputNumberType" class="p-1 rounded-sm"
+                            onchange="handelInputNumberType()">
+                            <option value="Binary">Binary</option>
+                            <option value="Octal">Octal</option>
+                            <option value="Decimal">Decimal</option>
+                            <option value="Hexadecimal">Hexadecimal</option>
+                        </select>
+                    </div>
+
+                    <!-- outBase selection / to  -->
+                    <div class="flex flex-col w-1/2">
+                        <label for="outputNumberType">To</label>
+
+                        <!-- option  -->
+                        <select name="outputNumberType" id="outputNumberType" class="p-1 rounded-sm"
+                            onchange="handelOutputNumberType()">
+                            <option value="Binary">Binary</option>
+                            <option value="Octal">Octal</option>
+                            <option value="Decimal" selected>Decimal</option>
+                            <option value="Hexadecimal">Hexadecimal</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- End option selection  -->
+
+                <!-- start number input box  -->
+                <div class="flex flex-col my-2">
+                    <label for="inputNumber">Enter <span id="labelFrom">Binary </span> Number </label>
+
+                    <div class="w-full flex bg-purple-200 rounded-sm border border-gray-600">
+                        <input type="text" name="inputNumber" id="inputNumber"
+                            class="w-11/12 rounded-l-sm p-2 border-r-gray-600 border-r outline-2 outline-blue-700">
+                        <span class="p-2 block mx-auto" id="userInputBase">2</span>
+                    </div>
+                </div>
+
+                <!-- div container  -->
+                <div class="flex w-full my-4 text-white font-semibold gap-4">
+
+                    <div class="bg-green-600 py-2 px-4 rounded-md cursor-pointer" onclick="getResult()">
+                        <i class="fa-solid fa-equals"></i> Convert
+                    </div>
+
+                    <button type="reset" class="bg-gray-600 py-2 px-4 rounded-md cursor-pointer">
+                        <i class="fa-solid fa-xmark"></i> Reset
+                    </button>
+
+                    <div class="bg-gray-600 py-2 px-4 rounded-md cursor-pointer" onclick="swapSelection()">
+                        <i class="fa-solid fa-arrow-right-arrow-left"></i> Swap
+                    </div>
+                </div>
+                <!-- output container  -->
+                <div class="flex flex-col my-2">
+                    <label for="outputNumber"><span id="labelTo">Decimal</span> Number </label>
+
+                    <div class="w-full flex bg-purple-200 rounded-sm border border-gray-600">
+                        <input type="text" name="outputNumber" id="outputNumber" readonly
+                            class="w-11/12 rounded-l-sm p-2 border-r-gray-600 border-r outline-2 outline-blue-700">
+                        <span class="p-2 block mx-auto" id="userOutputBase">10</span>
+                    </div>
+                </div>
+            </form>
+
+        </section>
+        <!-- End user input section -->
+    </main>
+
+    <footer class="absolute bottom-0 flex items-center justify-center w-full bg-purple-800 p-2 text-white">
+        <p class="opacity-80">Coder Calculator | &copy; All rights reserve</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
