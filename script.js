@@ -1,5 +1,5 @@
 const numberConvert = (inputNumber, inNumberBase, outNumberBase) => {
-  return parseInt(inputNumber, inNumberBase).toString(outNumberBase);
+  return parseFloat(inputNumber, inNumberBase).toString(outNumberBase);
 };
 
 function textToNumber(value) {
@@ -23,26 +23,26 @@ function textToNumber(value) {
 
 // check valid binary number
 function isValidBinary(number) {
-  const binaryRegex = /^[0-1]+$/;
+  const binaryRegex = /^[0-1-.]+$/;
   return binaryRegex.test(number);
 }
 
 // check valid octal number
 function isValidOctal(number) {
-  const binaryRegex = /^[0-7]+$/;
-  return binaryRegex.test(number);
-}
+  const octalRegex = /^[0-7-.]+$/;
+  return octalRegex.test(number);
+}x
 
 // check valid decimal number
 function isValidDecimal(number) {
-  const binaryRegex = /^[0-9]+$/;
-  return binaryRegex.test(number);
+  const decimalRegex = /^[0-9-.]+$/;
+  return decimalRegex.test(number);
 }
 
 // check valid hexadecimal number
 function isValidHexadecimal(number) {
-  const binaryRegex = /^[0-9a-fA-F]+$/;
-  return binaryRegex.test(number);
+  const hexadecimalRegex = /^[0-9a-fA-F-.]+$/;
+  return hexadecimalRegex.test(number);
 }
 
 // Entered number by user is a valid number
