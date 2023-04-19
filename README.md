@@ -57,7 +57,7 @@ Coder Calculator is a web app that provides quick and easy calculations for bina
 
 #### Preview
 
-To view the preview of the website visit:  [https://github.com/amanrana0/Coder--calculator](https://github.com/amanrana0/Coder--calculator)
+To view the preview of the website visit:  [https://github.com/amanrana0/Coder--calculator](https://amanrana0.github.io/Coder--calculator/)
 
 **Note:**
 When you visit the site form above link web page render with the help of __tailwind play cdn__ script
